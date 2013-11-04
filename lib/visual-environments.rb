@@ -58,9 +58,9 @@ module VisualEnvironments
        shim = "<script type='text/javascript'>var ce=document.createElement('div');ce.id='VisualEnvironment_corner';ce.innerHTML='"+current_env+"';document.body.appendChild(ce);</script>"
        
        if VisualEnvironments.corner_banner_side == :right
-         shim += "<style>#VisualEnvironment_corner{position:absolute;top:10px;right:-35px;font-family:Verdana;font-size:10px;color:#fff;padding:9px;width:120px;text-align:center;background:#000;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);}#VisualEnvironment_container{position:absolute;top:0;right:0;width:120px;height:93px;overflow:hidden;}</style>"
+         shim += "<style>#VisualEnvironment_corner{position:fixed;bottom:10px;right:-35px;font-family:Verdana;font-size:14px;color:#fff;padding:4px;width:120px;text-align:center;background:#86ccf1;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}</style>"
        elsif VisualEnvironments.corner_banner_side == :left
-         shim += "<style>#VisualEnvironment_corner{position:absolute;top:10px;left:-35px;font-family:Verdana;font-size:10px;color:#fff;padding:9px;width:120px;text-align:center;background:#000;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}#VisualEnvironment_container{position:absolute;top:0;left:0;width:120px;height:93px;overflow:hidden;}</style>"
+         shim += "<style>#VisualEnvironment_corner{position:fixed;bottom:10px;left:-35px;font-family:Verdana;font-size:14px;color:#fff;padding:4px;width:120px;text-align:center;background:#86ccf1;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);}</style>"
        end
        shim += "</body>"
        response.body = response.body.gsub /\<\/body\>/, shim
